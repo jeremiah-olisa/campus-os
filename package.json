@@ -1,0 +1,28 @@
+{
+  "name": "campus-os",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "be": "cd campus-os-backend && ",
+    "fe": "cd campus-os-frontend && ",
+    "dev:fe": "cd campus-os-frontend && pnpm dev",
+    "dev:be": "cd campus-os-backend && pnpm start:dev",
+    "dev": "concurrently --names \"Frontend,Backend\" -c \"blue,green\" \"pnpm dev:fe\" \"pnpm dev:be\"",
+    "build:fe": "cd campus-os-frontend && pnpm build",
+    "build:be": "cd campus-os-backend && pnpm build",
+    "build": "pnpm build:fe && pnpm build:be",
+    "lint:fe": "cd campus-os-frontend && pnpm lint",
+    "lint:be": "cd campus-os-backend && pnpm lint",
+    "lint": "pnpm lint:fe && pnpm lint:be",
+    "start:be": "cd campus-os-backend && pnpm start:prod",
+    "start": "pnpm start:be"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
