@@ -9,7 +9,7 @@ export class TenantsService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createTenantDto: CreateTenantDto) {
-    const invitationCode = generateInviteCode();
+    const invitationCode = generateInviteCode(64);
     const tenant = await this.prisma.tenants.create({
       data: {
         name: createTenantDto.name,
